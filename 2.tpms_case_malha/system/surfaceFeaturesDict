@@ -1,0 +1,26 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+|  \\    /  O peration      |
+|   \\  /   A nd            |
+|    \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      surfaceFeaturesDict;
+}
+
+// Input surfaces (STL files)
+surfaces
+(
+    "constant/geometry/wall.stl"
+    "constant/geometry/inlet.stl"
+    "constant/geometry/outlet.stl"
+);
+
+// Edge extraction parameters
+extractAngle 30;   // ângulo entre faces para criar arestas
