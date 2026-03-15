@@ -1,0 +1,5 @@
+blockMesh
+surfaceFeature
+snappyHexMesh -overwrite
+checkMesh
+foamRun -solver incompressibleFluid

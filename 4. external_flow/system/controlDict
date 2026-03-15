@@ -1,0 +1,69 @@
+FoamFile
+{
+    version 2.0;
+    format ascii;
+    class dictionary;
+    object controlDict;
+}
+
+application foamRun;
+
+solver incompressibleFluid;
+
+startFrom startTime;
+startTime 0;
+
+stopAt endTime;
+endTime 1000;
+
+deltaT 1;
+
+writeControl timeStep;
+writeInterval 50;
+
+purgeWrite 0;
+
+writeFormat ascii;
+
+writePrecision 6;
+
+runTimeModifiable true;
+
+
+
+functions
+{
+
+    residuals
+    {
+        type            residuals;
+
+        libs            ("libutilityFunctionObjects.so");
+
+        writeControl    timeStep;
+
+        writeInterval   50;
+
+        fields
+        (
+            U
+            p
+            k
+            omega
+        );
+    }
+
+
+    yPlus
+    {
+        type            yPlus;
+
+        libs            ("libfieldFunctionObjects.so");
+
+        writeControl    timeStep;
+
+        writeInterval   50;
+    }
+
+}
+
