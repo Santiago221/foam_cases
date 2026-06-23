@@ -1,0 +1,6 @@
+#!/bin/bash
+
+decomposePar
+mpirun -np 6 simpleFoam -parallel
+reconstructPar
+rm -rf processor*

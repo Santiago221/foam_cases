@@ -1,0 +1,7 @@
+#!/bin/bash
+
+blockMesh
+snappyHexMesh
+checkMesh
+splitMeshRegions -cellZones -largestOnly -overwrite
+

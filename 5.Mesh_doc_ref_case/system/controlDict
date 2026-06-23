@@ -1,0 +1,80 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      controlDict;
+}
+
+application     simpleFoam;
+
+startFrom       latestTime;
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         2000;           // número máximo de iterações
+
+deltaT          1;              // não usado fisicamente em steady-state
+
+writeControl    timeStep;
+
+writeInterval   10;             // grava resultados a cada 10 iterações
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  6;
+
+writeCompression off;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable true;
+
+purgeWrite 1;
+
+
+functions
+{
+
+    residuals
+    {
+        type            residuals;
+
+        libs            ("libutilityFunctionObjects.so");
+
+        writeControl    timeStep;
+        writeInterval   10;             
+
+        fields
+        (
+            U
+            p
+            k
+            omega
+        );
+    }
+
+
+    yPlus
+    {
+        type            yPlus;
+
+        libs            ("libfieldFunctionObjects.so");
+
+        writeControl    timeStep;
+        writeInterval   10;             
+
+    }
+
+    
+    
+
+    
+}
+
