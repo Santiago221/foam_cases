@@ -51,12 +51,12 @@ castellatedMeshControls
     {
         tpms
         {
-            level (3 4);
+            level (6 7);
         }
 
         nozzle
         {
-            level (3 4);
+            level (5 6);
         }
 
         inlet
@@ -95,7 +95,7 @@ addLayersControls
     {
         tpms
         {
-            nSurfaceLayers 5;
+            nSurfaceLayers 7;
         }
         nozzle
         {
